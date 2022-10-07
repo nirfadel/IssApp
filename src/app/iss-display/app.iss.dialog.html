@@ -1,0 +1,10 @@
+<div class="modal-header" *ngIf="issModel != null">
+    <h4 class="modal-title" id="modal-basic-title">Iss Location: lat: {{issModel.iss_position.latitude}} lon: {{issModel.iss_position.longitude}}</h4>
+   
+    <div class="modal-body">
+        <input [(ngModel)]="issModel.note" type="text"  placeholder="Enter note">
+        <button (click)="passBack()" type="submit" class="btn btn-primary w-100">Save</button>
+    </div>
+    <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')"><span aria-hidden="true">&times;</span>
+    </button>
+</div>

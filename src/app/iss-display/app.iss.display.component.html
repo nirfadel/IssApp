@@ -1,0 +1,36 @@
+
+<div class="card" *ngIf="issModel != null">
+    <div class="card-body">
+      <h5 class="card-title">Iss details</h5>
+      <div>Cordiante - lat: {{issModel.iss_position.latitude}} lon: {{issModel.iss_position.longitude}}</div>
+      <div>Time: {{issModel.timestamp}}</div>
+      <a href="#" class="btn btn-primary" (click)="openModal()">Enter note</a>
+    </div>
+  </div>
+<div *ngIf="showIssTable && issList != null ">
+  <h2>All Iss Data</h2>
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th scope="col">Latitude</th>
+      <th scope="col">Longitude</th>
+      <th scope="col">Message</th>
+      <th scope="col">Timestamp</th>
+      <th scope="col">Note</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let iss of issList">
+      <td>
+        {{ iss.iss_position.latitude }}
+      </td>
+      <td>{{ iss.iss_position.longitude }}</td>
+      <td>{{ iss.message }}</td>
+      <td>{{ iss.timestamp }}</td>
+      <td>{{ iss.note }}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+<iss-dialog></iss-dialog>
+
